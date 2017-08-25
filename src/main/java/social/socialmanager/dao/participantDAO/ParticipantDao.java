@@ -1,4 +1,4 @@
-package social.socialmanager.dao;
+package social.socialmanager.dao.participantDAO;
 
 import social.socialmanager.model.Participant;
 

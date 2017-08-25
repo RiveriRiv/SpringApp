@@ -1,4 +1,4 @@
-package social.socialmanager.dao;
+package social.socialmanager.dao.participantDAO;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
