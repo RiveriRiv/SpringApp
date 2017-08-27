@@ -36,7 +36,7 @@ public class ParticipantServiceImpl implements ParticipantService {
         return this.participantDao.findByID(id);
     }
 
-    @Transactional
+
     public List<Participant> getParticipant() {
         return this.participantDao.getParticipant();
     }
