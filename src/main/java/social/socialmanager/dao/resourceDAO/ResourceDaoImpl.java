@@ -33,7 +33,7 @@ public class ResourceDaoImpl implements ResourceDAO {
 
     public void deleteResource(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Resource resource = session.load(Resource.class, id);
+        Resource resource = (Resource) session.load(Resource.class, id);
 
         if (resource != null) {
             session.delete(resource);
@@ -43,7 +43,7 @@ public class ResourceDaoImpl implements ResourceDAO {
 
     public Resource getByID(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Resource resource = session.load(Resource.class, id);
+        Resource resource = (Resource) session.load(Resource.class, id);
         return resource;
     }
 

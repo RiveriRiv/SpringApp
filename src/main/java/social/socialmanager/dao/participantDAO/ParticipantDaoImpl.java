@@ -34,7 +34,7 @@ public class ParticipantDaoImpl implements ParticipantDao {
 
     public void deleteParticipant(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Participant participant = session.load(Participant.class, id);
+        Participant participant = (Participant) session.load(Participant.class, id);
 
         if (participant != null) {
             session.delete(participant);
@@ -44,7 +44,7 @@ public class ParticipantDaoImpl implements ParticipantDao {
 
     public Participant findByID(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Participant participant = session.load(Participant.class, id);
+        Participant participant = (Participant) session.load(Participant.class, id);
         if (participant == null) {
             logger.debug("Participant with id: " + id + "was not found");
         }
@@ -53,7 +53,7 @@ public class ParticipantDaoImpl implements ParticipantDao {
 
     public List<Participant> getParticipant() {
         Session session = sessionFactory.getCurrentSession();
-        List<Participant> list = (ArrayList<Participant>) session.createQuery("select * from SPR_PARTICIPANT");
+        List<Participant> list = (ArrayList<Participant>) session.createQuery("from Participant");
         return list;
     }
 }
